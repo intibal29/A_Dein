@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="175.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENCUESTA" textAlignment="CENTER" wrappingWidth="186.83056640625">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROFESION" />
+      <Text layoutX="18.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nº HERMANOS" />
+      <TextField layoutX="120.0" layoutY="118.0" />
+      <TextField layoutX="120.0" layoutY="82.0" prefHeight="26.0" prefWidth="414.0" />
+      <Text layoutX="321.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDAD" />
+      <SplitMenuButton layoutX="368.0" layoutY="117.0" mnemonicParsing="false" textAlignment="CENTER" wrapText="true">
+        <items>
+          <MenuItem mnemonicParsing="false" text="18-30" />
+            <MenuItem mnemonicParsing="false" text="31 y 50" />
+            <MenuItem mnemonicParsing="false" text="51-70" />
+          <MenuItem mnemonicParsing="false" text="MENORES 18" />
+        </items>
+      </SplitMenuButton>
+      <RadioButton layoutX="186.0" layoutY="160.0" mnemonicParsing="false" text="HOMBRE" />
+      <RadioButton layoutX="335.0" layoutY="160.0" mnemonicParsing="false" text="MUJER" />
+      <Text layoutX="102.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEXO" />
+      <CheckBox layoutX="14.0" layoutY="200.0" mnemonicParsing="false" text="¿PRACTICA ALGUN DEPORTE?" />
+   </children>
+</AnchorPane>
