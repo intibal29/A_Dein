@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text layoutX="175.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENCUESTA" textAlignment="CENTER" wrappingWidth="186.83056640625">
          <font>
@@ -26,7 +26,12 @@
       </SplitMenuButton>
       <RadioButton layoutX="186.0" layoutY="160.0" mnemonicParsing="false" text="HOMBRE" />
       <RadioButton layoutX="335.0" layoutY="160.0" mnemonicParsing="false" text="MUJER" />
-      <Text layoutX="102.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEXO" />
+      <Text layoutX="77.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEXO" />
       <CheckBox layoutX="14.0" layoutY="200.0" mnemonicParsing="false" text="¿PRACTICA ALGUN DEPORTE?" />
+      <TextArea layoutX="308.0" layoutY="218.0" prefHeight="54.0" prefWidth="211.0" text="TENIS &#10;FUTBOL &#10;BALONCESTO&#10;&#10;" />
+      <Label layoutX="303.0" layoutY="201.0" text="¿CUAL?" />
+      <Label layoutX="140.0" layoutY="286.0" text="MARQUE DEL 1 AL 10 SU GRADO DE AFICCION" />
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <Slider />
    </children>
 </AnchorPane>
