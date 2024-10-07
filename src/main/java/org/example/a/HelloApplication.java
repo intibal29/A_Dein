@@ -4,15 +4,19 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+/**
+ * Clase principal de la aplicación JavaFX.
+ * Esta clase extiende Application y es responsable de iniciar la aplicación y cargar la vista principal.
+ */
 public class HelloApplication extends Application {
-
+    /**
+     * Método principal que se llama al inicio de la aplicación.
+     *
+     * @param primaryStage La ventana principal de la aplicación.
+     */
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -22,10 +26,15 @@ public class HelloApplication extends Application {
             primaryStage.setTitle("Mi Aplicación JavaFX");
             primaryStage.show();
         } catch (IOException e) {
-            e.printStackTrace(); // Imprimir la traza de la excepción
+            // Manejo de excepciones: imprimir la traza de la excepción si ocurre un error al cargar el FXML
+            e.printStackTrace();
         }
     }
-
+    /**
+     * Método principal de la aplicación.
+     *
+     * @param args Argumentos de línea de comandos.
+     */
     public static void main(String[] args) {
         launch(args);
     }
