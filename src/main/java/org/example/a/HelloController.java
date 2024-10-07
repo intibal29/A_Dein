@@ -3,7 +3,6 @@ package org.example.a;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -14,7 +13,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-
+/**
+ * Controlador de la interfaz de usuario para la aplicación Hello.
+ * Este controlador gestiona la interacción del usuario con los componentes de la interfaz
+ * y la lógica detrás de las acciones del usuario.
+ */
 public class HelloController implements Initializable {
 
     @FXML
@@ -26,7 +29,7 @@ public class HelloController implements Initializable {
     @FXML
     private CheckBox checkBoxPregunta;
 
-    // aqui habia que especificar el tipo de comboBox "String" antes estaba asi private ComboBox<String> comboBoxEdad;
+
     @FXML
     private ComboBox<String> comboBoxEdad;
 
@@ -69,10 +72,10 @@ public class HelloController implements Initializable {
     // Métodos de control de entrada
 
     /**
-     * Verifica si la cadena es un número.
+     * Verifica si una cadena dada representa un número.
      *
      * @param cadena La cadena a verificar.
-     * @return true si la cadena es un número, false de lo contrario.
+     * @return true si la cadena es un número, false en caso contrario.
      */
     private boolean esNumero(String cadena) {
         try {
@@ -83,7 +86,8 @@ public class HelloController implements Initializable {
         }
     }
     /**
-     * Maneja el evento de mostrar el diálogo al hacer clic en el botón "Aceptar".
+     * Maneja el evento de clic en el botón "Aceptar".
+     * Muestra un diálogo con los datos del usuario, o un mensaje de error si hay entradas inválidas.
      *
      * @param event El evento de acción.
      */
@@ -162,8 +166,6 @@ public class HelloController implements Initializable {
                     + textoSexo+ "\n Deportes que practicas: \n"+valores.toString()+"Grado de aficción a las compras : "+valorFormateadoCompras+
                     "\n Grado de aficción a ver televisión : " + valorFormateadoTele + "\n Grado de aficción ir al cine : " + valorFormateadoCine);
             alerta.showAndWait();
-
-            // Reiniciar la lista de selectedSports para que cada vez el user le apetece cambiar los sports se mostra bien
             selectedSports.clear();
 
         }
@@ -171,34 +173,49 @@ public class HelloController implements Initializable {
 
 
     ArrayList<String> selectedSports = new ArrayList<String>();
+    /**
+     * Maneja el evento de selección de un deporte en la lista.
+     * Agrega el deporte seleccionado a la lista de deportes.
+     *
+     * @param event El evento de clic del ratón.
+     */
+
     @FXML
     void seleccionarDeporte(MouseEvent event) {
-
         String deporteSeleccionado = listViewCual.getSelectionModel().getSelectedItem().toString();
         if (!selectedSports.contains(deporteSeleccionado)) {
             selectedSports.add(deporteSeleccionado);
         }
     }
-
+    /**
+     * Maneja el evento de selección de edad en el comboBox.
+     *
+     * @param event El evento de acción.
+     */
     @FXML
     void seleccionarEdad(ActionEvent event) {
         String EdadSeleccionado = comboBoxEdad.getSelectionModel().getSelectedItem().toString();
 
     }
-
+    /**
+     * Inicializa los componentes de la interfaz de usuario al cargar la vista.
+     * Establece los elementos para el ComboBox de edad y el ListView de deportes.
+     *
+     * @param url La URL de la localización de recursos.
+     * @param rb  El conjunto de recursos para la interfaz de usuario.
+     */
     public void initialize(URL url, ResourceBundle rb) {
 
-        // Voy a crear la funcion de visualizacion del comboBox Edad:
+        // Configuración del ComboBox de edad
+
         ObservableList<String> listaComboBox = FXCollections.observableArrayList("Menores de 18","Enrtre 18 y 30","Entre 31 y 50","Entre 51 y 70","Mayores de 70");
         comboBoxEdad.setItems(listaComboBox);
-
-        // crear la funcion de visualizacion del listViewCual:
-
+        // Configuración del ListView de deportes
         ObservableList<String> listaViewList = FXCollections.observableArrayList("Tenis","Fútbal","Baloncesto","Natación","Ciclismo","otro");
         listViewCual.setItems(listaViewList);
         listViewCual.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-        // Cancelar button para salir del APP !ESO NO HACE FALTA BASTA CON INCIALIZAR EL BUTTON ABAJO
+        // Configuración del botón "Cancelar" para cerrar la aplicación
         btnCancelar.setOnAction(e -> Platform.exit());
     }
 }
