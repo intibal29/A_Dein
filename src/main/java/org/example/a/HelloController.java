@@ -99,7 +99,7 @@ public class HelloController implements Initializable {
         String hermanos = txtHermanos.getText();
         String edad = comboBoxEdad.getSelectionModel().getSelectedItem();
         String sports;
-        // tenia puesto en el if abajo chekbox isselected
+        
         if (profesion.isEmpty() || esNumero(profesion) || hermanos.isEmpty() || !esNumero(hermanos) || (checkBoxPregunta.isSelected() && selectedSports.isEmpty())){
 
             if (profesion.isEmpty() || esNumero(profesion)) {
@@ -160,7 +160,7 @@ public class HelloController implements Initializable {
 
             // Definicion de la ventana INFORMATION
             Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-            alerta.setTitle("TUS DATOS");
+            alerta.setTitle("Tus datos:");
             alerta.setHeaderText(null);
             alerta.setContentText(" Profesión: " + profesion+"\n Nº de hermanos: " + hermanos+"\n edad : "+ edad +"\n sexo"
                     + textoSexo+ "\n Deportes que practicas: \n"+valores.toString()+"Grado de aficción a las compras : "+valorFormateadoCompras+
