@@ -218,4 +218,28 @@ public class HelloController implements Initializable {
         // Configuración del botón "Cancelar" para cerrar la aplicación
         btnCancelar.setOnAction(e -> Platform.exit());
     }
+
+    public Button getBtnAceptar() {
+        return btnAceptar;
+    }
+
+    public void setBtnAceptar(Button btnAceptar) {
+        this.btnAceptar = btnAceptar;
+    }
+
+    public RadioButton getRbOtro() {
+        return rbOtro;
+    }
+
+    public void setRbOtro(RadioButton rbOtro) {
+        this.rbOtro = rbOtro;
+    }
+
+    public ToggleGroup getGrpSexo() {
+        return grpSexo;
+    }
+
+    public void setGrpSexo(ToggleGroup grpSexo) {
+        this.grpSexo = grpSexo;
+    }
 }
